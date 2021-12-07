@@ -2,9 +2,11 @@
 
 ***[link to deployed site]()***
 
+
 Nicks Boots is a handmade boot manufacturer in Spokane, Wa. 
 I am a fan of their product so i decided to remake a portion of their website, which has annoyed me in the past. 
 Im using this project to familiarize myself with Material UI and Stripe Payment services
+
 ---
 
 
