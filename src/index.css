@@ -1,13 +1,182 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+}
+body,
+input,
+select,
+button,
+textarea {
+
+  font-family: 'EB Garamond', serif;
+  font-size: 1.6rem;
+}
+.link {
+  color :#fefae0;
+  text-decoration: none;
+}
+.link:hover{
+  color:#c89254;
+}
+
+/* products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.products li {
+  flex: 0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img {
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.product button{
+
+  font-size: 1.5rem;
+}
+.product button:hover{
+  color:#c89254;
+}
+
+/* cart items */
+
+.btn-silk{
+  color: #fefae0;
+  font-size: 15px;
+}
+.btn-silk:hover{
+  color:#c89254
+}
+
+.cart-items img {
+  width: 5rem;
+}
+
+.btn-kombu{
+  background-color: #283618;
+  color: #fefae0;
+}
+.bg-black{
+  background-color: #000000;
+}
+.bg-olive{
+  background-color: #606c38;
+}
+.bg-kombu{
+  background-color: #283618;
+}
+.bg-silk{
+  background-color: #fefae0;
+}
+
+
+.bg-fawn{
+  background-color: #c89254;
+}
+.bg-liver{
+  background-color: #bc6c25;
+}
+.text-black{
+  color: #000000;
+}
+.text-olive{
+  color:#606c38 ;
+}
+.text-kombu{
+  color: #283618;
+}
+.text-silk{
+  color: #fefae0;
+}
+
+
+
+/* homepage */
+.bg-black{
+  background-color: #000000;
+}
+.bg-olive{
+  background-color: #606c38;
+}
+.bg-kombu{
+  background-color: #283618;
+}
+.bg-silk{
+  background-color: #fefae0;
+}
+.bg-fawn{
+  background-color: #c89254;
+}
+.bg-liver{
+  background-color: #bc6c25;
+}
+.text-olive{
+  color:#606c38 ;
+}
+.text-kombu{
+  color: #283618;
+}
+.text-silk{
+  color: #fefae0;
+}
+.ps-fawn{
+  background-color: #ac7d48  ;
+}
+.ps-silk{
+  background-color: #fefae0  ;
+  margin: 0px;
+}
+.ps-kombu{
+  background-color: #283618  ;
+  margin: 0px;
+}
+.parallax{
+  background-image: url("https://media.nicksboots.com/wysiwyg/home/boots-outdoors-side.jpg");
+  height: 600px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax2{
+  background-image:url('https://www.thecoolector.com/wp-content/uploads/2019/12/hu15-1-1024x1024.jpg');
+  height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.indent{
+  text-indent: 30%;
+}
+
+.FormControl.Mui-focused{
+color: #283618;
+}
+.FormControl.Mui-active{
+color: #283618;
 }
