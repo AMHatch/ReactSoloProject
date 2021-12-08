@@ -11,12 +11,45 @@ import Products from './components/Products';
 import Checkout from './components/Checkout'
 import Payment from './components/Payment';
 import ProductDetails from './components/ProductDetails';
+import ProductsWork from './components/ProductsWork';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
+
+
+// const saveToLocalStorage = (reduxGlobalState) => {
+//   //serialization = converting js object to string
+//   try{
+//       const serializeState = JSON.stringify(reduxGlobalState)
+//       localStorage.setItem('state',serializeState)
+//   }catch(e){
+//     console.log(e)
+//   }
+// }
+
+// const loadFromLocalStorage = () => {
+//   //deserialization
+//   const serializedState = localStorage.getItem('state');
+//   if('state' == null){
+//     return undefined
+//   }else{
+//     return JSON.parse(serializedState)
+//   }
+// }
+
+// const persistedState = loadFromLocalStorage()
+
+// const store = createStore(reducer,persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+
+// store.subscribe(() => {
+//   //happens every time there is a change to global state
+//   saveToLocalStorage(store.getState())
+// })
+
+
+
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
-
 
 ReactDOM.render(
   
@@ -27,9 +60,10 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />}/>
           <Route path="/products" element={<Products />}/>
+          <Route path="/productsWork" element={<ProductsWork />}/>
           <Route path="/checkout" element={<Checkout />}/>
           <Route path="/payment" element={<Payment />}/>
-          <Route path="/ProductDetails" element={<ProductDetails />}/>
+          {/* <Route path="/ProductDetails" element={<ProductDetails />}/> */}
           <Route path="/ProductDetails/:ProductID" element={<ProductDetails />}/>
           
         </Routes>

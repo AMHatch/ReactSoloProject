@@ -29,9 +29,9 @@ const CartItems = () => {
         cartItems.length !== 0
         ?
         <div>
-          You have <em>{numOfItems}</em> items in the cart. 
-          <br />
-          Total Cost : {formatCurrency(totalCost)}
+          You have {numOfItems} items in your cart. 
+          
+          
         </div>
         :
         <div>Your cart is empty</div>
@@ -48,16 +48,16 @@ const CartItems = () => {
               <div>
                 <img src={item.image} alt="" />
               </div>
-              <div> &nbsp;&nbsp;{item.title} x {item.quantity}</div>
+              <div> &nbsp;&nbsp;{item.title}  {item.quantity !== 0 ? `x ${item.quantity}` : '' }</div>
             </div>
             <div>{formatCurrency(item.price)}
 
             
             </div>
             <div>
-            <button className="btn text-danger mx-2" onClick={()=>dispatch(removeFromCart(item))}>Remove</button> 
+            <button className="btn text-danger mx-2" onClick={()=>dispatch(removeFromCart(item))}> <h5>Remove</h5> </button> 
 
-            <button className="btn" onClick={ ()=>saveLater(item)}> Save for later</button>
+            <button className="btn" onClick={ ()=>saveLater(item)}> <h5>Save for later</h5> </button>
 
             
                 
@@ -67,8 +67,13 @@ const CartItems = () => {
           })}
         </div>
       </Fade>
+      <hr />
+      <div className="row d-flex justify-content-center align-items-center">
+        <div className="col-6 text-center">Total: {formatCurrency(totalCost)}</div>
+        <div className="col-6 text-center"> { numOfItems !== 0 ? <Link to='/checkout'><button className="btn btn-kombu link"><h3>Checkout</h3></button></Link> : ''}  </div>
+      </div>
       
-      <div className=" text-end"> { numOfItems !== 0 ? <Link to='/checkout'><button className="btn btn-kombu"><h3>Checkout</h3></button></Link> : ''}  </div>
+      
       <div>
         {numOfItemsSaved !== 0 ? <SavedItems/> : <hr/>}
       </div>

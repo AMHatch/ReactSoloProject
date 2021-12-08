@@ -1,16 +1,43 @@
-import React from 'react'
 
-import {PaymentElement} from '@stripe/react-stripe-js';
+import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 
-function CheckoutForm() {
-    return (
-        <div>
-    <form>
-      <PaymentElement />
-      <button>Submit</button>
-    </form>
-        </div>
-    )
+
+
+
+
+const CheckoutForm = () => {
+const stripe = useStripe();
+const elements = useElements();
+
+const handleSubmit = async (event) => {
+event.preventDefault();
+
+if (!stripe || !elements) {
+
+    return;
 }
 
+const result = await stripe.confirmPayment({
+    
+    elements,
+    confirmParams: {
+    return_url: "localhost:3000",
+    },
+});
+
+if (result.error) {
+    
+    console.log(result.error.message);
+} else {
+    
+}
+};
+
+return (
+<form onSubmit={handleSubmit}>
+    <CardElement />
+    <button className="btn btn-kombu" disabled={!stripe}><h3>Submit</h3></button>
+</form>
+)
+};
 export default CheckoutForm

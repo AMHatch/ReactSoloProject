@@ -1,4 +1,4 @@
-import React,{useState, useSelector} from 'react'
+import React,{useState} from 'react'
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -34,7 +34,7 @@ const list = (anchor) => (
     sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
     role="presentation"
 >
-    <button className="btn text-danger" onClick={toggleDrawer(anchor, false)}> <h2>< FaChevronCircleRight/></h2> </button>
+    <button className="btn text-kombu" onClick={toggleDrawer(anchor, false)}> <h2>< FaChevronCircleRight/></h2> </button>
     <List className="justify-content-center">
 
     <CartItems/>

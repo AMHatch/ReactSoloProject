@@ -19,15 +19,14 @@ function SavedItems() {
     return (
         <>
         <hr />
-        <h2>Saved Items</h2>
+        
             <div>
                 {
                 savedForLater.length !== 0
                 ?
                 <div>
-                    You have <em> {numOfItemsSaved}</em> items saved. 
-                    <br />
-                    Total Cost : {formatCurrency(totalCostSaved)}
+                    You have  {numOfItemsSaved} items saved. 
+                    
                 </div>
                 :
                 <div>You have no saved items</div>
@@ -45,8 +44,8 @@ function SavedItems() {
                                 <div> &nbsp;&nbsp;{item.title}</div>
                                 </div>
                                 <div>{formatCurrency(item.price)} <br />
-                                    <button className="btn text-danger" onClick={()=>dispatch(removeFromSaved(item))}>Remove</button>
-                                    <button className="btn  " onClick={()=>handleAdd(item)}>Add to Cart</button>
+                                    <button className="btn text-danger" onClick={()=>dispatch(removeFromSaved(item))}> <h5>Remove</h5> </button>
+                                    <button className="btn  " onClick={()=>handleAdd(item)}> <h5>Add to Cart</h5></button>
                                 </div>
                             </div>
                         })}

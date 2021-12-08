@@ -28,12 +28,12 @@ const cartReducer = (state,action) => {
             })
 
             if(!isFound){
-                newCartItems.push({...action.product,})
+                newCartItems.push({...action.product,quantity:1})
             }
 
             return{
                 ...state,
-                cartItems: [...state.cartItems, action.product],
+                cartItems: newCartItems,
                 numOfItems: state.numOfItems + 1,
                 totalCost: state.totalCost + parseFloat(action.product.price)
             }

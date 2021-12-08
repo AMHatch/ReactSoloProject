@@ -7,6 +7,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import OffCanvasCart from '../OffCanvasCart';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
 
@@ -29,12 +31,18 @@ const BaseLayout = (props) => {
       <Nav className=" justify-content-end align-items-center">
       <Link className="link mx-3" to="#"><OffCanvasCart/></Link>
       
-       {numOfItems} Items in Cart 
+      {numOfItems.length === 0 ? `${numOfItems} Items in Cart`: `${numOfItems} Items in Cart` }
       
     </Nav>
     </Container>
   </Navbar>
       {props.children}
+
+  <footer className="btn-kombu p-2 d-flex justify-content-center align-items-center fixed-bottom">
+Developed by&nbsp;<a className="link" href="https://amhatch.com">Andrew Hatch</a> &nbsp;
+<a className="link" href="https://github.com/AMHatch/ReactSoloProject" target="_blank" rel="noreferrer"><GitHubIcon/></a>&nbsp;
+<a className="link" href="https://www.linkedin.com/in/amhatch/" target="_blank" rel="noreferrer"><LinkedInIcon/> </a>
+  </footer>
     </>
   )
 }

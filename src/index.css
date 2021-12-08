@@ -3,12 +3,17 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  
 }
 
 body,
 #root {
   height: 100vh;
   margin: 0;
+  background-image: url("https://images.unsplash.com/photo-1446034295857-c39f8844fad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 body,
 input,
@@ -110,6 +115,12 @@ textarea {
 }
 .text-silk{
   color: #fefae0;
+}
+.bg-image{
+  background-image: url("https://images.unsplash.com/photo-1446034295857-c39f8844fad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80") ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 
