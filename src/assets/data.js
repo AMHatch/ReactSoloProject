@@ -806,7 +806,7 @@ let products = [
     id:uuidv4(),
     title: "Maryam's Limited Run",
     image:"/images/LTDHorsehide.jpeg",
-    last: 'Custom Choice',
+    last: '',
     height: 'Custom Choice: 6" or 8"',
     outsole:"Vibram® Custom Sole Choice",
     type:"limited",
@@ -824,7 +824,7 @@ let products = [
     height: '8"',
     outsole:"Vibram® V-100 Lug Sole",
     type:"limited",
-    color:"Brown Waxed",
+    color:"",
     leather:"Horween Chromexcel",
     price: 620,
     description: "Modeled after the Nicks $1000 Indestructible Boot Concept featured on the Rose Anvil YouTube Channel. Limited to 500 pairs"
@@ -838,7 +838,7 @@ let products = [
     height: '8"',
     outsole:"Vibram® V-100 Lug Sole",
     type:"limited",
-    color:"Dark Olive",
+    color:"",
     leather:"Horween Chromexcel ",
     price: 550,
     description: "A bit darker than standard Olive Chromexcel, the Dark Olive adds just enough subtle color without being too green. This material clocks in at 6-7 oz. thick, giving you the toughest Chromexcel boots on the market"
@@ -852,7 +852,7 @@ let products = [
     height: '10"',
     outsole:"Vibram® V-100 Lug Sole",
     type:"limited",
-    color:"Black",
+    color:"",
     leather:"Seidel - Maximum Support Work",
     price: 535,
     description: " Inspired by the boot Jason made here at the Nicks Handmade Boots shop, this Special Edition BuilderPro™ is only available for a limited time! Limited to 500 pairs. Are you on your feet 8-12 hours a day? The BuilderPro(TM) was designed with you in mind. If you are a tradesmen, mechanic, warehouse worker, construction worker, logger, or you’re doing anything else where you’re on your feet all day. This is your boot. Combining the highest grade leather on the market and our legendary arch support technology, you can’t beat the BuilderPro for serious work."

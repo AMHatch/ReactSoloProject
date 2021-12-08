@@ -68,7 +68,7 @@ textarea {
 
 /* cart items */
 
-.btn-silk{
+.btn-silk1{
   color: #fefae0;
   font-size: 15px;
 }
@@ -84,6 +84,11 @@ textarea {
   background-color: #283618;
   color: #fefae0;
 }
+.btn-silk{
+  background-color: #fefae0;
+  color: #283618;
+}
+
 .bg-black{
   background-color: #000000;
 }

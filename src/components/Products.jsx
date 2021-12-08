@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 import Fade from 'react-reveal/Fade'
 import { addToCart, saveForLater } from '../actions/cartActions'
-
+import FilterDropDown from './FilterDropDown'
 import Details from './Details'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -33,8 +33,59 @@ const Products = () => {
   const heritageProducts = products.filter(product=>product.type === 'casual')
   const limitedProducts = products.filter(product=>product.type === 'limited')
 
+ 
+
   const [productType, setProductType] = useState(workProducts)
+  
   const [open, setOpen] = useState(false)
+
+
+
+
+  const compareName = (a,b) => {
+    if ( a.title < b.title ){
+        return -1;
+    }
+    if ( a.title > b.title ){
+        return 1;
+    }
+    return 0;
+}
+  const comparePriceLow = (a,b) => {
+    if ( a.price < b.price ){
+        return -1;
+    }
+    if ( a.price > b.price ){
+        return 1;
+    }
+    return 0;
+}
+  const comparePriceHigh = (a,b) => {
+    if ( a.price > b.price ){
+        return -1;
+    }
+    if ( a.price < b.price ){
+        return 1;
+    }
+    return 0;
+}
+
+const name = compareName
+const high = comparePriceHigh
+const low = comparePriceLow
+
+const [compare, setCompare] = useState(name)
+
+useEffect(() => {
+console.log("compare",compare);
+  productType.sort(compare)
+
+}, [compare])
+
+
+
+
+
 
 
   const anchor = "right"
@@ -51,7 +102,9 @@ const toggleDrawer = (anchor, open) => (event) => {
 
   useEffect(() => {
     dispatch(loadProducts())
+   
     setProductType(products)
+    
     
   }, [])
 
@@ -67,6 +120,22 @@ const handleClose = (event, reason) => {
 
   setOpen(false);
 };
+
+// productType.sort(() => {
+//   if(compare == 'high'){
+//     return comparePriceHigh
+//   }else if( compare == 'low'){
+//     return comparePriceLow
+//   }else{
+//     return compareName
+//   }
+// })
+
+
+
+
+
+
 
 const action = (
   <React.Fragment>
@@ -107,6 +176,12 @@ const message = (
         <button className="btn btn-kombu mx-3 link px-5" onClick={()=>setProductType(limitedProducts)}><h2> Limited Release Boots</h2></button>
         <button className="btn btn-kombu mx-3 link px-5" onClick={()=>setProductType(fireProducts)}><h2>Fire Boots</h2></button>
         <button className="btn btn-kombu mx-3 link px-5 " onClick={()=>setProductType(products)}><h2>All Boots</h2></button>
+        <br /><br />
+
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(name)}><h2> Name A-Z</h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(low)}><h2> Price: Ascending </h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(high)}><h2> Price: Descending </h2></button>
+        
         
       </div>
       <div className="col d-lg-none mt-5 text-start">

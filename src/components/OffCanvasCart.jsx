@@ -48,7 +48,7 @@ return (
     
     <React.Fragment key={anchor}>
 
-        <button className="btn btn-silk"  onClick={toggleDrawer(anchor, true)}> <FaShoppingCart/> </button>
+        <button className="btn btn-silk1 "  onClick={toggleDrawer(anchor, true)}> <FaShoppingCart/> </button>
 
         <SwipeableDrawer
         anchor={anchor}
