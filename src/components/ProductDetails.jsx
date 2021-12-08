@@ -5,10 +5,9 @@ import {useParams, } from 'react-router-dom'
 import { removeFromCart,saveForLater,addToCart } from '../actions/cartActions'
 import SavedItemsFooter from './SavedItemsFooter'
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+
 
 function ProductDetails() {
     const {ProductID} = useParams()
@@ -38,17 +37,12 @@ function ProductDetails() {
         ) {
             return;
         }
-      }
-
-    const saveLater = (item) => {
-        dispatch(removeFromCart(item))
-        dispatch(saveForLater(item))
-        
         }
+
         const handleAddCart = (product) => {
             dispatch(addToCart(product))
             toggleDrawer(anchor, true)
-          }
+            } 
     return (
         <> 
         

@@ -2,8 +2,6 @@ import React,{useState,useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import { loadProducts } from '../actions/productActions'
 import { Link } from 'react-router-dom'
-
-
 import Fade from 'react-reveal/Fade'
 import { addToCart, saveForLater } from '../actions/cartActions'
 import FilterDropDown from './FilterDropDown'
@@ -20,9 +18,6 @@ import Button from '@mui/material/Button';
 
 
 
-
-
-
 //import products
 const Products = () => {
   
@@ -32,11 +27,9 @@ const Products = () => {
   const fireProducts = products.filter(product=>product.type === 'fire')
   const heritageProducts = products.filter(product=>product.type === 'casual')
   const limitedProducts = products.filter(product=>product.type === 'limited')
-
- 
+  
 
   const [productType, setProductType] = useState(workProducts)
-  
   const [open, setOpen] = useState(false)
 
 
@@ -51,6 +44,7 @@ const Products = () => {
     }
     return 0;
 }
+
   const comparePriceLow = (a,b) => {
     if ( a.price < b.price ){
         return -1;
@@ -60,6 +54,7 @@ const Products = () => {
     }
     return 0;
 }
+
   const comparePriceHigh = (a,b) => {
     if ( a.price > b.price ){
         return -1;
@@ -70,26 +65,17 @@ const Products = () => {
     return 0;
 }
 
+
 const name = compareName
 const high = comparePriceHigh
 const low = comparePriceLow
 
-const [compare, setCompare] = useState(name)
-
-useEffect(() => {
-console.log("compare",compare);
-  productType.sort(compare)
-
-}, [compare])
+const sortedHigh = productType.sort(high)
+const sortedLow = productType.sort(low)
+const sortedName = productType.sort(name)
 
 
-
-
-
-
-
-  const anchor = "right"
-
+const anchor = "right"
 const toggleDrawer = (anchor, open) => (event) => {
     if (
         event &&
@@ -121,18 +107,6 @@ const handleClose = (event, reason) => {
   setOpen(false);
 };
 
-// productType.sort(() => {
-//   if(compare == 'high'){
-//     return comparePriceHigh
-//   }else if( compare == 'low'){
-//     return comparePriceLow
-//   }else{
-//     return compareName
-//   }
-// })
-
-
-
 
 
 
@@ -157,9 +131,11 @@ const message = (
   <h3 className="text-silk">Added to Cart</h3>
 )
 
+productType.sort(high)  
+
+
   return (
     <> 
-     
     <div className="container mt-5">
       <div className="row mt-5">
         <div className="col mt-5">
@@ -178,9 +154,9 @@ const message = (
         <button className="btn btn-kombu mx-3 link px-5 " onClick={()=>setProductType(products)}><h2>All Boots</h2></button>
         <br /><br />
 
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(name)}><h2> Name A-Z</h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(low)}><h2> Price: Ascending </h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setCompare(high)}><h2> Price: Descending </h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedName)}><h2> Name A-Z</h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedLow)}><h2> Price: Ascending </h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedHigh)}><h2> Price: Descending </h2></button>
         
         
       </div>
