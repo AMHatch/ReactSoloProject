@@ -27,9 +27,11 @@ const Products = () => {
   const fireProducts = products.filter(product=>product.type === 'fire')
   const heritageProducts = products.filter(product=>product.type === 'casual')
   const limitedProducts = products.filter(product=>product.type === 'limited')
+ 
   
 
   const [productType, setProductType] = useState(workProducts)
+  
   const [open, setOpen] = useState(false)
 
 
@@ -55,6 +57,7 @@ const Products = () => {
     return 0;
 }
 
+
   const comparePriceHigh = (a,b) => {
     if ( a.price > b.price ){
         return -1;
@@ -64,15 +67,9 @@ const Products = () => {
     }
     return 0;
 }
-
-
 const name = compareName
 const high = comparePriceHigh
 const low = comparePriceLow
-
-const sortedHigh = productType.sort(high)
-const sortedLow = productType.sort(low)
-const sortedName = productType.sort(name)
 
 
 const anchor = "right"
@@ -87,12 +84,34 @@ const toggleDrawer = (anchor, open) => (event) => {
   }
 
   useEffect(() => {
+
     dispatch(loadProducts())
-   
+  
     setProductType(products)
     
     
   }, [])
+
+
+useEffect(() => {
+  console.log("UI UPDATED");
+
+
+
+  }, [productType])
+
+  const sort = (method) => {
+    
+    let sortedArr = productType.sort(method)
+
+    setProductType(sortedArr)
+
+    console.log("productType",productType)
+    }
+  
+  // productType.sort(high)
+  
+
 
 const handleAddCart = (product) => {
   dispatch(addToCart(product))
@@ -106,8 +125,6 @@ const handleClose = (event, reason) => {
 
   setOpen(false);
 };
-
-
 
 
 
@@ -131,8 +148,6 @@ const message = (
   <h3 className="text-silk">Added to Cart</h3>
 )
 
-productType.sort(high)  
-
 
   return (
     <> 
@@ -154,9 +169,9 @@ productType.sort(high)
         <button className="btn btn-kombu mx-3 link px-5 " onClick={()=>setProductType(products)}><h2>All Boots</h2></button>
         <br /><br />
 
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedName)}><h2> Name A-Z</h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedLow)}><h2> Price: Ascending </h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>setProductType(sortedHigh)}><h2> Price: Descending </h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(name)}><h2> Name A-Z</h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(low)}><h2> Price: Ascending </h2></button>
+        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(high)}><h2> Price: Descending </h2></button>
         
         
       </div>
