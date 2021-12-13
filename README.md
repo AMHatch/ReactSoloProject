@@ -50,7 +50,7 @@ Im using this project to familiarize myself with React, Redux and Material UI .
 
  # Screenshots 
 ![about](public/images/screenshot1.png)
-![cart](public/images/screenshot2.png)
+![cart](public/images/screenshot4.png)
 
  # Developers
  Andrew Hatch:
