@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export class App extends Component {
     render() {
@@ -14,10 +15,13 @@ export class App extends Component {
                         <div className="lead font text-kombu">
                             <h1>In 1964, Nicks Boots began the tradition of expertly making the best handmade boots on the market. After 50 years, Nicks is still located in Spokane, WA, continuing on that same tradition.</h1>
                         </div>
+                        <div>
+                        <Link className="link  mx-3" to="/products"> <button className='link btn btn-kombu '><h1> &nbsp; Shop Nicks Boots &nbsp; </h1></button></Link>
+                        </div>
                     
                     </div>
                 </div>
-
+                <div className='mt-5 mb-5'> &nbsp;</div>
                 <div className="ps-kombu text-silk row mt-3 mt-md-0 ">
                     <div className="col-md-6 d-flex flex-column align-items-center justify-content-center p-5"> 
                         <div className="font display-5 p-5">
@@ -35,7 +39,7 @@ export class App extends Component {
                             <img src="/images/nicks-boots-falcon.jpeg"  width="75%" height="100%" alt="boots"/>
                     </div>
                 </div>
-                <div className="parallax2 d-none d-md-block"></div>
+                <div className='mt-5 mb-5'> &nbsp;</div>
                 <div className="ps-silk row mt-3 mt-md-0">
                     <div className="col-md-6 d-flex align-items-center justify-content-center mt-5 mb-5">
 
@@ -55,6 +59,9 @@ export class App extends Component {
                     
                     </div>
                 </div>
+
+                <div className="parallax2 d-none d-md-block"></div>
+
                 <div className="ps-kombu row mt-3 mt-md-0 ">
                     <div className="col-md-6 d-flex flex-column text-silk align-items-center justify-content-center p-5"> 
                         <div className="font display-5 p-5">
@@ -70,7 +77,7 @@ export class App extends Component {
                             <img src="images/fire_boot_shopping_guide.jpeg"  width="75%" alt="boots"/>
                     </div>
                 </div>
-
+                <div className='mt-5 mb-5'> &nbsp;</div>
                 <div className="ps-silk row mt-3 mt-md-0 ">
                 <div className="col-md-6 d-flex align-items-center justify-content-center mt-5 mb-5">
                             <img src="images/guide_to_work_boots.jpeg"  width="75%" height="100%" alt="boots"/>
@@ -103,6 +110,7 @@ export class App extends Component {
                     
                     </div>
                 </div>
+                <div className='mt-5 mb-5'> &nbsp;</div>
                 <div className="ps-silk row mt-3 mt-md-0 ">
                     <div className="col-md-6 d-flex flex-column align-items-center justify-content-center p-5"> 
                         <div className="font display-5 p-5">
@@ -116,6 +124,7 @@ export class App extends Component {
                             <img src="images/BuilderPro_1964_new_old.jpeg"  width="75%" alt="boots"/>
                     </div>
                 </div>
+                <div className="parallax3 d-none d-md-block"></div>
                 <div className="ps-kombu text-silk row mt-3 mt-md-0">
                     <div className="col-md-6 d-flex align-items-center justify-content-center mt-5 mb-5">
                         <img src="images/when_to_resole_boots_and_when_to_rebuild_1.jpeg"  width="75%" height="100%" alt="boot"/>
@@ -135,10 +144,13 @@ export class App extends Component {
                     
                     </div>
                 </div>
-                <div className="ps-silk row mt-3 mt-md-0 align-items-center justify-content-center mt-5 mb-5">
+                <div className=' mb-5'> &nbsp;</div>
+                <div className="ps-silk row mt-3 mb-5 mt-md-0 align-items-center justify-content-center mt-5 mb-5">
                     <img width="100%" src="https://media.nicksboots.com/wysiwyg/BuyWithConfidence.jpg" alt=""/>
                 </div>
+                <div className='mt-5 mb-5'> &nbsp;</div>
                 </div>
+                
                 </div>
 
 </>

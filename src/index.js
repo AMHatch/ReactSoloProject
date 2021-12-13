@@ -11,7 +11,7 @@ import Products from './components/Products';
 import Checkout from './components/Checkout'
 import Payment from './components/Payment';
 import ProductDetails from './components/ProductDetails';
-import ProductsWork from './components/ProductsWork';
+import About from './components/About';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -60,10 +60,9 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />}/>
           <Route path="/products" element={<Products />}/>
-          <Route path="/productsWork" element={<ProductsWork />}/>
           <Route path="/checkout" element={<Checkout />}/>
           <Route path="/payment" element={<Payment />}/>
-          {/* <Route path="/ProductDetails" element={<ProductDetails />}/> */}
+          <Route path="/about" element={<About />}/>
           <Route path="/ProductDetails/:ProductID" element={<ProductDetails />}/>
           
         </Routes>

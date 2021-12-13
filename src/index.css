@@ -28,10 +28,14 @@ textarea {
   color :#fefae0;
   text-decoration: none;
 }
-.link:hover{
-  color:#c89254;
-}
 
+.link:hover{
+  color:#ac7d48;
+  text-decoration: underline;
+}
+.list{
+list-style: none;
+}
 /* products */
 .products {
   display: flex;
@@ -121,6 +125,11 @@ textarea {
 .text-silk{
   color: #fefae0;
 }
+.text-liver{
+  color:#bc6c25
+}
+
+
 .bg-image{
   background-image: url("https://images.unsplash.com/photo-1446034295857-c39f8844fad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80") ;
   background-repeat: no-repeat;
@@ -170,21 +179,29 @@ textarea {
   margin: 0px;
 }
 .parallax{
-  background-image: url("https://media.nicksboots.com/wysiwyg/home/boots-outdoors-side.jpg");
+  background-image: url(https://scontent.fatl1-2.fna.fbcdn.net/v/t39.30808-6/262007596_5457259577623326_8807210501981659273_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_ohc=5XNKfB4fu2kAX-gb388&tn=fyf8UbbPc6ZJrZwe&_nc_ht=scontent.fatl1-2.fna&oh=11da22dcc0a31af439da0172a92053ed&oe=61B93FAE);
   height: 600px;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .parallax2{
-  background-image:url('https://www.thecoolector.com/wp-content/uploads/2019/12/hu15-1-1024x1024.jpg');
+  background-image:url(https://scontent.fatl1-2.fna.fbcdn.net/v/t1.6435-9/122263202_4189903297692300_8948267043194979432_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_ohc=LmvA0Cg6gugAX-hKU-J&_nc_ht=scontent.fatl1-2.fna&oh=00_AT-BG-7pwXWr21ycGEwKwim1O5G-vKN1PQ-5YCV7ZVfGQA&oe=61D91ADD);
   height: 600px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+.parallax3{
+  background-image:url(https://scontent.fatl1-1.fna.fbcdn.net/v/t1.6435-9/95586957_3668377573178211_3898763026869780480_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=9267fe&_nc_ohc=CskEz1sfdp8AX9UZLMr&_nc_ht=scontent.fatl1-1.fna&oh=29acccd872244bfb43226aac31ce58c5&oe=61D775F5);
+  height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .indent{
   text-indent: 30%;
@@ -196,3 +213,8 @@ color: #283618;
 .FormControl.Mui-active{
 color: #283618;
 }
+
+
+
+
+

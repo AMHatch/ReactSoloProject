@@ -34,10 +34,19 @@ if (result.error) {
 };
 
 return (
+<div>
+     {/* <form action=""> </form> */}
+
+<h2>*PlaceHolder for Stripe Payment Platform*</h2>
+<h2>Stripe Requires a back-end. If time allows, I may integrate a Node.js backend to teach myself Stripe.   </h2>
+
+
+
 <form onSubmit={handleSubmit}>
     <CardElement />
     <button className="btn btn-kombu" disabled={!stripe}><h3>Submit</h3></button>
 </form>
+</div>
 )
 };
 export default CheckoutForm

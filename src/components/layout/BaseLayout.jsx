@@ -27,6 +27,7 @@ const BaseLayout = (props) => {
     <Nav className=" align-items-center">
       <Link className="link mx-3" to="/">< FaHome /></Link>
       <Link className="link mx-3" to="/products">Products</Link>
+      <Link className="link mx-3" to="/about">About</Link>
       </Nav>
       <Nav className=" justify-content-end align-items-center">
       <Link className="link mx-3" to="#"><OffCanvasCart/></Link>

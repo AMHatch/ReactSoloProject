@@ -4,7 +4,6 @@ import { loadProducts } from '../actions/productActions'
 import { Link } from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
 import { addToCart, saveForLater } from '../actions/cartActions'
-import FilterDropDown from './FilterDropDown'
 import Details from './Details'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -15,6 +14,12 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { VscMenu } from "react-icons/vsc";
+import { FaSortAmountDown} from "react-icons/fa"
+import { FaSortAmountDownAlt} from "react-icons/fa"
+import { FaSortAlphaDown} from "react-icons/fa"
+
 
 
 
@@ -27,15 +32,9 @@ const Products = () => {
   const fireProducts = products.filter(product=>product.type === 'fire')
   const heritageProducts = products.filter(product=>product.type === 'casual')
   const limitedProducts = products.filter(product=>product.type === 'limited')
- 
-  
 
   const [productType, setProductType] = useState(workProducts)
-  
   const [open, setOpen] = useState(false)
-
-
-
 
   const compareName = (a,b) => {
     if ( a.title < b.title ){
@@ -67,10 +66,6 @@ const Products = () => {
     }
     return 0;
 }
-const name = compareName
-const high = comparePriceHigh
-const low = comparePriceLow
-
 
 const anchor = "right"
 const toggleDrawer = (anchor, open) => (event) => {
@@ -84,25 +79,20 @@ const toggleDrawer = (anchor, open) => (event) => {
   }
 
   useEffect(() => {
-
     dispatch(loadProducts())
   
-    setProductType(products)
-    
     
   }, [])
 
-
-useEffect(() => {
-  console.log("UI UPDATED");
-
-
-
-  }, [productType])
+  useEffect(() => {
+    setProductType(workProducts)
+  }, [products])
 
   const sort = (method) => {
-    
-    let sortedArr = productType.sort(method)
+
+    let sortProductType = [...productType]
+
+    let sortedArr = sortProductType.sort(method)
 
     setProductType(sortedArr)
 
@@ -149,17 +139,18 @@ const message = (
 )
 
 
+
   return (
     <> 
     <div className="container mt-5">
       <div className="row mt-5">
-        <div className="col mt-5">
+        <div className="col mt-5 d-none d-lg-block">
           
         <img width="100%" src="https://media.nicksboots.com/wysiwyg/BuyWithConfidence.jpg" alt=""/>
         </div>
       </div>
       <div className="row "> 
-      <div className="col d-flex d-none d-lg-block mt-5 text-center">
+      <div className="col-12 d-flex d-none d-lg-block mt-5 text-center">
       
         
         <button className="btn btn-kombu mx-3 link px-5" onClick={()=>setProductType(heritageProducts)}><h2> Heritage Boots</h2></button>
@@ -169,21 +160,47 @@ const message = (
         <button className="btn btn-kombu mx-3 link px-5 " onClick={()=>setProductType(products)}><h2>All Boots</h2></button>
         <br /><br />
 
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(name)}><h2> Name A-Z</h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(low)}><h2> Price: Ascending </h2></button>
-        <button className="btn btn-silk mx-3 link px-5" onClick={()=>sort(high)}><h2> Price: Descending </h2></button>
-        
-        
-      </div>
-      <div className="col d-lg-none mt-5 text-start">
+    
+    <div className="col-10 mt-5 d-flex justify-content-end">
 
-        
-        <button className="btn text-silk mx-3 link " onClick={()=>setProductType(workProducts)}><h2>Work Boots</h2></button> <br />
-        <button className="btn text-silk mx-3 link " onClick={()=>setProductType(fireProducts)}><h2>Fire Boots</h2></button> <br />
-        <button className="btn text-silk mx-3 link " onClick={()=>setProductType(heritageProducts)}><h2> Heritage Boots</h2></button> <br />
-        <button className="btn text-silk mx-3 link " onClick={()=>setProductType(limitedProducts)}><h2> Limited Release Boots</h2></button> <br />
-        <button className="btn text-silk mx-3 link  " onClick={()=>setProductType(products)}><h2>All Boots</h2></button> <br />
-      
+    <Dropdown className='mr-5 drop-down-class'>
+      <Dropdown.Toggle variant="link" bsPrefix="p-0">
+      <button className='btn btn-kombu mx-5'><h3 className='text-silk '> Sort &nbsp; <VscMenu/> </h3></button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+      <Dropdown.Item onClick={()=>sort(compareName)} ><h2>Name <FaSortAlphaDown/></h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>sort(comparePriceLow)} ><h2>Price <FaSortAmountDownAlt/> </h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>sort(comparePriceHigh)} ><h2>Price <FaSortAmountDown/> </h2></Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+    </div>
+      </div>
+
+
+      <div className="col-9 d-lg-none mt-5">
+      <img width="100%" src="https://media.nicksboots.com/wysiwyg/BuyWithConfidence.jpg" alt=""/>
+
+      </div>
+
+      <div className="col-2 d-lg-none mt-5 text-center">
+
+      <Dropdown className='mr-5 drop-down-class'>
+      <Dropdown.Toggle variant="link" bsPrefix="p-0">
+      <button className='btn btn-kombu mx-5'><h1 className='text-white '> <VscMenu/> </h1></button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item className='text-kombu' onClick={()=>setProductType(heritageProducts)} ><h2>Heritage</h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>setProductType(workProducts)} > <h2>Work</h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>setProductType(limitedProducts)} ><h2>Limited</h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>setProductType(fireProducts)} ><h2>Fire</h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>setProductType(products)} ><h2>All</h2></Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item onClick={()=>sort(compareName)} ><h2>Name <FaSortAlphaDown/>  </h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>sort(comparePriceLow)} ><h2>Price <FaSortAmountDownAlt/></h2></Dropdown.Item>
+        <Dropdown.Item onClick={()=>sort(comparePriceHigh)} ><h2>Price <FaSortAmountDown/></h2></Dropdown.Item>
+        </Dropdown.Menu>
+    </Dropdown>
+    
       
       </div>
       </div>
