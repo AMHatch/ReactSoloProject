@@ -10,7 +10,7 @@ Im using this project to familiarize myself with React, Redux and Material UI .
 
 
 
-![ProductsPage](public/images/Screen Shot 2021-12-10 at 10.46.46 AM.png)
+![ProductsPage](public/images/Screen-Shot-2021-12-10-at-10.46.46-AM.png)
 
 ---
 
@@ -49,8 +49,8 @@ Im using this project to familiarize myself with React, Redux and Material UI .
  # Code Snippets 
 
  # Screenshots 
-![about](public/images/Screen Shot 2021-12-10 at 10.50.38 AM.png)
-![cart](public/images/Screen Shot 2021-12-10 at 10.49.43 AM.png)
+![about](public/images/Screen-Shot-2021-12-10-at-10.50.38-AM.png)
+![cart](public/images/Screen-Shot-2021-12-10-at-10.49.43-AM.png)
 
  # Developers
  Andrew Hatch:
