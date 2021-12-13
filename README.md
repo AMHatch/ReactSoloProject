@@ -1,6 +1,6 @@
 # Nicks Boots React Site 
 
-***[link to deployed site]()***
+***[link to deployed site](https://amhatchreactsite.netlify.app/)***
 
 
 Nicks Boots is a handmade boot manufacturer in Spokane, Wa. 
@@ -10,7 +10,7 @@ Im using this project to familiarize myself with React, Redux and Material UI .
 
 
 
-![ProductsPage](/images/Screen Shot 2021-12-10 at 10.46.46 AM.png)
+![ProductsPage](public/images/Screen Shot 2021-12-10 at 10.46.46 AM.png)
 
 ---
 
@@ -49,8 +49,8 @@ Im using this project to familiarize myself with React, Redux and Material UI .
  # Code Snippets 
 
  # Screenshots 
-![about](/images/Screen Shot 2021-12-10 at 10.50.38 AM.png)
-![cart](/images/Screen Shot 2021-12-10 at 10.49.43 AM.png)
+![about](public/images/Screen Shot 2021-12-10 at 10.50.38 AM.png)
+![cart](public/images/Screen Shot 2021-12-10 at 10.49.43 AM.png)
 
  # Developers
  Andrew Hatch:
